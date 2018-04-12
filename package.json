@@ -9,7 +9,9 @@
     "test": "jest --verbose --coverage",
     "test:update": "jest --verbose --coverage --updateSnapshot",
     "test:watch": "jest --verbose --watch",
-    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
+    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
   },
   "dependencies": {
     "react": "16.3.1",

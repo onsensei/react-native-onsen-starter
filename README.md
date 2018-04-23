@@ -12,12 +12,18 @@ This is react native project starter / boilerplate / project template that come 
 - [redux](https://redux.js.org/)
 - [saga](https://github.com/redux-saga/redux-saga)
 
+## Prerequisite
+1. XXX
+2. XXX
+3. XXX
+
 ## Usage
 1. clone or copy this project to your local mechine
-2. add your remote repo to this project on your local mechine
-97. install modules with command `???`
-98. rename project with command `???`
-99. start coding your app ???
+2. add your remote repository reference to this project on your local mechine
+3. remove repository reference of react-native-onsen-starter
+4. install modules with command `npm install` or `yarn`
+5. rename project with command `yarn react-native-rename <newName> -b <bundleIdentifier>` of [react-native-rename](https://www.npmjs.com/package/react-native-rename)
+6. start coding your app 😎
 
 ## How to reproduce this starter
 You can make your starter by following these steps.

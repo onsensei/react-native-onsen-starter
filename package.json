@@ -41,7 +41,8 @@
     "react-dom": "^16.3.1",
     "react-native-debugger-open": "^0.3.17",
     "react-test-renderer": "16.3.1",
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "^3.4.1",
+    "redux-saga-testing": "^1.0.5"
   },
   "jest": {
     "preset": "react-native",

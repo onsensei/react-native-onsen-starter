@@ -138,5 +138,18 @@ $ npm install redux-persist --save
   }
 }
 ```
+18. add config code to make react-native-debugger can monitor network data in [index.js](https://github.com/onsensei/react-native-onsen-starter/blob/master/index.js)
+```
+if (__DEV__) {
+  global.XMLHttpRequest = global.originalXMLHttpRequest ?
+    global.originalXMLHttpRequest :
+    global.XMLHttpRequest;
+  global.FormData = global.originalFormData ?
+    global.originalFormData :
+    global.FormData;
+}
+
+AppRegistry.registerComponent(...);
+```
 
 or use for integreate with another starter such as [react-native-firebase-starter](https://github.com/invertase/react-native-firebase-starter)

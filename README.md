@@ -16,7 +16,8 @@ This is react native project starter / boilerplate / project template that come 
 ## Prerequisite
 1. [Node.js and Native SDK (iOS, android) and React Native Framework](https://facebook.github.io/react-native/docs/getting-started.html)
 2. [Yarn - optional but recommend for replace npm](https://yarnpkg.com/en/)
-3. [react-native-debugger standalone app](https://github.com/jhen0409/react-native-debugger#installation)
+3. eslint plugin for your editor such as [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for [Visual Studio Code](https://code.visualstudio.com/)
+4. [react-native-debugger standalone app](https://github.com/jhen0409/react-native-debugger#installation)
 
 ## Usage
 1. clone or copy this project to your local mechine

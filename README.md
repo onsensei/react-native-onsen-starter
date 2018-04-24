@@ -14,9 +14,9 @@ This is react native project starter / boilerplate / project template that come 
 - [saga](https://github.com/redux-saga/redux-saga)
 
 ## Prerequisite
-1. XXX
-2. XXX
-3. XXX
+1. [Node.js and Native SDK (iOS, android) and React Native Framework](https://facebook.github.io/react-native/docs/getting-started.html)
+2. [Yarn - optional but recommend for replace npm](https://yarnpkg.com/en/)
+3. [react-native-debugger standalone app](https://github.com/jhen0409/react-native-debugger#installation)
 
 ## Usage
 1. clone or copy this project to your local mechine

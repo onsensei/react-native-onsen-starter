@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './App.style';
-import {Platform, Text, View} from 'react-native';
+import {Button, Platform, Text, View} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,6 +20,10 @@ export default class App extends Component {
       count: newCount
     });
   }
+
+  onPressCountButton = () => {
+    this.increase();
+  }
   
   render () {
     return (
@@ -36,6 +40,7 @@ export default class App extends Component {
         <Text style={styles.instructions}>
           count : {this.state.count}
         </Text>
+        <Button title='count' onPress={this.onPressCountButton}/>
       </View>
     );
   }

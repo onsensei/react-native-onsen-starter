@@ -19,16 +19,16 @@ describe('App', () => {
     expect(tree).toMatchSnapshot();
   });
   
-  it('increase: should made state change', () => {
+  it('onPressCountButton: should increase count', () => {
     expect(instance.state.count).toEqual(0);
 
-    instance.increase();
+    instance.onPressCountButton();
     expect(instance.state.count).toEqual(1);
 
-    instance.increase();
+    instance.onPressCountButton();
     expect(instance.state.count).toEqual(2);
 
-    instance.increase();
+    instance.onPressCountButton();
     expect(instance.state.count).toEqual(3);
   });
 });

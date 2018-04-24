@@ -9,6 +9,7 @@ This is react native project starter / boilerplate / project template that come 
 - [react-dom](https://www.npmjs.com/package/react-dom)
 - [react-native-rename](https://www.npmjs.com/package/react-native-rename)
 - [react-navigation](https://reactnavigation.org/docs/getting-started.html)
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 - [redux](https://redux.js.org/)
 - [saga](https://github.com/redux-saga/redux-saga)
 
@@ -80,7 +81,11 @@ $ npm i react-native-rename
 ```
 $ npm install --save react-navigation
 ```
-14. install modules for redux & saga ([redux, react-redux, redux-devtools](https://redux.js.org/#installation), [redux-actions](https://www.npmjs.com/package/redux-actions), [redux-saga](https://www.npmjs.com/package/redux-saga), [redux-saga-testing](https://www.npmjs.com/package/redux-saga-testing))
+14. install [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) module
+```
+$ npm install react-native-vector-icons --save
+```
+15. install modules for redux & saga ([redux, react-redux, redux-devtools](https://redux.js.org/#installation), [redux-actions](https://www.npmjs.com/package/redux-actions), [redux-saga](https://www.npmjs.com/package/redux-saga), [redux-saga-testing](https://www.npmjs.com/package/redux-saga-testing), [react-navigation-redux-helpers](https://www.npmjs.com/package/react-navigation-redux-helpers), [redux-persist](https://www.npmjs.com/package/redux-persist))
 ```
 $ npm install --save redux
 
@@ -93,8 +98,12 @@ $ npm install --save redux-actions
 $ npm install --save redux-saga
 
 $ npm i --save-dev redux-saga-testing
+
+$ npm install --save react-navigation-redux-helpers
+
+$ npm install --save redux-persist
 ```
-15. edit jest config in `package.json`
+16. edit jest config in `package.json`
 ```
 {
   "jest": {
@@ -110,7 +119,7 @@ $ npm i --save-dev redux-saga-testing
   }
 }
 ```
-16. edit scripts config in `package.json`
+17. edit scripts config in `package.json`
 ```
 {
   "scripts": {

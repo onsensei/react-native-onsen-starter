@@ -85,6 +85,8 @@ $ npm install react-navigation --save
 14. install [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) module
 ```
 $ npm install react-native-vector-icons --save
+
+$ react-native link react-native-vector-icons
 ```
 15. install modules for redux & saga ([redux, react-redux, redux-devtools](https://redux.js.org/#installation), [redux-actions](https://www.npmjs.com/package/redux-actions), [redux-saga](https://www.npmjs.com/package/redux-saga), [redux-saga-testing](https://www.npmjs.com/package/redux-saga-testing), [react-navigation-redux-helpers](https://www.npmjs.com/package/react-navigation-redux-helpers), [redux-persist](https://www.npmjs.com/package/redux-persist))
 ```

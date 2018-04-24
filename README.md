@@ -23,7 +23,7 @@ This is react native project starter / boilerplate / project template that come 
 2. add your remote repository reference to this project on your local mechine
 3. remove repository reference of react-native-onsen-starter
 4. install modules with command `npm install` or `yarn`
-5. rename project with command `yarn react-native-rename <newName> -b <bundleIdentifier>` of [react-native-rename](https://www.npmjs.com/package/react-native-rename)
+5. rename project with command `npm run react-native-rename <newName> -b <bundleIdentifier>` of [react-native-rename](https://www.npmjs.com/package/react-native-rename)
 6. start coding your app 😎
 
 ## How to reproduce this starter
@@ -47,7 +47,7 @@ $ npm install eslint-plugin-react --save-dev
 
 $ npm install eslint-plugin-react-native --save-dev
 
-$ npm i --save-dev eslint-plugin-sort-imports-es6-autofix
+$ npm install eslint-plugin-sort-imports-es6-autofix --save-dev
 
 $ npm install eslint@3.x babel-eslint@7 --save-dev
 ```
@@ -55,7 +55,7 @@ $ npm install eslint@3.x babel-eslint@7 --save-dev
 6. edit ignore for eslint with [.eslintignore](https://github.com/onsensei/react-native-onsen-starter/blob/master/.eslintignore)
 7. install [enzyme modules](https://www.npmjs.com/package/enzyme-react-16-adapter-setup)
 ```
-$ npm install --save-dev enzyme react-test-renderer enzyme-adapter-react-16 enzyme-react-16-adapter-setup
+$ npm install enzyme react-test-renderer enzyme-adapter-react-16 enzyme-react-16-adapter-setup --save-dev
 ```
 8. install [jest-enzyme](https://www.npmjs.com/package/jest-enzyme) module
 ```
@@ -63,7 +63,7 @@ $ npm install jest-enzyme --save-dev
 ```
 9. install [react-native-debugger-open](https://github.com/jhen0409/react-native-debugger) module
 ```
-$ npm i --save-dev react-native-debugger-open
+$ npm install react-native-debugger-open --save-dev
 ```
 10. install [husky](https://www.npmjs.com/package/husky) module
 ```
@@ -75,11 +75,11 @@ $ npm install react-dom --save-dev
 ```
 12. install [react-native-rename](https://www.npmjs.com/package/react-native-rename) module
 ```
-$ npm i react-native-rename
+$ npm install react-native-rename --save
 ```
 13. install [react-navigation](https://reactnavigation.org/docs/getting-started.html) module
 ```
-$ npm install --save react-navigation
+$ npm install react-navigation --save
 ```
 14. install [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) module
 ```
@@ -87,21 +87,21 @@ $ npm install react-native-vector-icons --save
 ```
 15. install modules for redux & saga ([redux, react-redux, redux-devtools](https://redux.js.org/#installation), [redux-actions](https://www.npmjs.com/package/redux-actions), [redux-saga](https://www.npmjs.com/package/redux-saga), [redux-saga-testing](https://www.npmjs.com/package/redux-saga-testing), [react-navigation-redux-helpers](https://www.npmjs.com/package/react-navigation-redux-helpers), [redux-persist](https://www.npmjs.com/package/redux-persist))
 ```
-$ npm install --save redux
+$ npm install redux --save
 
-$ npm install --save react-redux
+$ npm install react-redux --save
 
-$ npm install --save-dev redux-devtools
+$ npm install redux-devtools --save-dev
 
-$ npm install --save redux-actions
+$ npm install redux-actions --save
 
-$ npm install --save redux-saga
+$ npm install redux-saga --save
 
-$ npm i --save-dev redux-saga-testing
+$ npm install redux-saga-testing --save-dev
 
-$ npm install --save react-navigation-redux-helpers
+$ npm install react-navigation-redux-helpers --save
 
-$ npm install --save redux-persist
+$ npm install redux-persist --save
 ```
 16. edit jest config in `package.json`
 ```

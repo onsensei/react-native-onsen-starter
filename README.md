@@ -106,7 +106,7 @@ $ npm install react-navigation-redux-helpers --save
 
 $ npm install redux-persist --save
 ```
-16. edit jest config in `package.json`
+16. edit jest config in [package.json](https://github.com/onsensei/react-native-onsen-starter/blob/master/package.json)
 ```
 {
   "jest": {
@@ -122,7 +122,7 @@ $ npm install redux-persist --save
   }
 }
 ```
-17. edit scripts config in `package.json`
+17. edit scripts config in [package.json](https://github.com/onsensei/react-native-onsen-starter/blob/master/package.json)
 ```
 {
   "scripts": {

@@ -5,6 +5,11 @@ export default {
     alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
+  horizontalContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',

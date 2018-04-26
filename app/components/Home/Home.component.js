@@ -9,6 +9,7 @@ import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IconOcticons from 'react-native-vector-icons/Octicons';
 import IconSimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import IconZocial from 'react-native-vector-icons/Zocial';
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styles from './Home.style';
 import {Button, Platform, Text, View} from 'react-native';
@@ -36,6 +37,10 @@ export default class Home extends Component {
     this.increase();
   }
   
+  goToAboutPage = () => {
+    this.props.navigation.navigate('About');
+  }
+
   render () {
     return (
       <View style={styles.container}>
@@ -67,7 +72,16 @@ export default class Home extends Component {
           <IconSimpleLineIcons name='rocket' size={30} color='#900' />
           <IconZocial name='pocket' size={30} color='#900' />
         </View>
+        <Button title='Go to About page >' onPress={this.goToAboutPage}/>
       </View>
     );
   }
 }
+
+Home.propTypes = {
+  navigation: PropTypes.object
+};
+
+Home.defaultProps = {
+  navigation: null
+};

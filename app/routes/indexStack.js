@@ -3,7 +3,7 @@ import Home from '../components/Home/Home.component';
 import Setting from '../components/Setting/Setting.component';
 import {StackNavigator} from 'react-navigation';
 
-const HomeStackNav = StackNavigator({
+const HomeStackNavigator = StackNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
@@ -24,4 +24,4 @@ const HomeStackNav = StackNavigator({
   }
 });
 
-export default HomeStackNav;
+export default HomeStackNavigator;

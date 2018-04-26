@@ -10,7 +10,7 @@ import IconOcticons from 'react-native-vector-icons/Octicons';
 import IconSimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import IconZocial from 'react-native-vector-icons/Zocial';
 import React, {Component} from 'react';
-import styles from './App.style';
+import styles from './Home.style';
 import {Button, Platform, Text, View} from 'react-native';
 
 const instructions = Platform.select({
@@ -20,7 +20,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu'
 });
 
-export default class App extends Component {
+export default class Home extends Component {
   state = {
     count: 0
   }
@@ -43,7 +43,7 @@ export default class App extends Component {
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit App.js
+          To get started, edit Home.component.js
         </Text>
         <Text style={styles.instructions}>
           {instructions}

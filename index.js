@@ -1,4 +1,4 @@
-import App from './app/App';
+import App from './app/index';
 import {AppRegistry} from 'react-native';
 
 if (__DEV__) {

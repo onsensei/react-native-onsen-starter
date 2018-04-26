@@ -1,15 +1,15 @@
-import App from '../App';
+import Home from '../Home.component';
 import {shallow} from 'enzyme';
 
 // Note: test renderer must be required after react-native.
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-describe('App', () => {
+describe('Home', () => {
   let component, wrapper, instance;
 
   beforeEach(() => {
-    component = <App/>;
+    component = <Home/>;
     wrapper = shallow(component);
     instance = wrapper.instance();
   });

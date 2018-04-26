@@ -31,10 +31,18 @@ const SettingStackNavigator03 = StackNavigator({
   }
 });
 
+// ----------
+
 const tabPages = {
-  SettingStackNavigator01,
-  SettingStackNavigator02,
-  SettingStackNavigator03
+  Setting01: {
+    screen: SettingStackNavigator01
+  },
+  Setting02: {
+    screen: SettingStackNavigator02
+  },
+  Setting03: {
+    screen: SettingStackNavigator03
+  }
 };
 
 const config = {

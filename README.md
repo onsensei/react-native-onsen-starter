@@ -106,7 +106,10 @@ $ npm install react-navigation-redux-helpers --save
 
 $ npm install redux-persist --save
 ```
-16. edit jest config in [package.json](https://github.com/onsensei/react-native-onsen-starter/blob/master/package.json)
+16. edit jest config in [package.json](https://github.com/onsensei/react-native-onsen-starter/blob/master/package.json) for
+- load config to jest with `react-native` preset
+- load test framework & environment that specific in `setupTestFrameworkScriptFile` and `setupFiles`
+- specific some module that use ES6+ inside `(?!)` for transform them to ES5
 ```
 {
   "jest": {

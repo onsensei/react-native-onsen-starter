@@ -25,7 +25,8 @@ This is react native project starter / boilerplate / project template that come 
 3. remove repository reference of react-native-onsen-starter
 4. install modules with command `npm install` or `yarn`
 5. rename project with command `npm run react-native-rename <newName> -b <bundleIdentifier>` of [react-native-rename](https://www.npmjs.com/package/react-native-rename)
-6. start coding your app 😎
+6. remove or edit [README.md](https://github.com/onsensei/react-native-onsen-starter/blob/master/README.md) and made your own one
+7. start coding your app 😎
 
 ## How to reproduce this starter
 You can make your starter by following these steps.

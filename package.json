@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "react-native run-ios",
+    "iphone:default": "react-native run-ios --simulator='iPhone SE'",
+    "ipad:default": "react-native run-ios --simulator='iPad Pro (9.7-inch)'",
     "android": "react-native run-android",
     "test": "jest --verbose --coverage",
     "test:update": "jest --verbose --coverage --updateSnapshot",

@@ -12,8 +12,4 @@ if (typeof devToolsExtension === 'function') {
 
 const composedEnhancer = compose(/* applyMiddleware(someReduxMiddleware, someOtherReduxMiddleware),*/ ...enhancerList);
 
-const initStore = () => createStore(rootReducer, {}, composedEnhancer);
-
-module.exports = {
-  initStore
-};
+export const initStore = () => createStore(rootReducer, {}, composedEnhancer);

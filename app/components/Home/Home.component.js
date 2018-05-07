@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styles from './Home.style';
 import {Button, Platform, Text, View} from 'react-native';
+import {connect} from 'react-redux';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -21,7 +22,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu'
 });
 
-export default class Home extends Component {
+class Home extends Component {
   state = {
     count: 0
   }
@@ -85,3 +86,13 @@ Home.propTypes = {
 Home.defaultProps = {
   navigation: null
 };
+
+const mapStateToProps = (state) => ({
+  state
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  dispatch
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

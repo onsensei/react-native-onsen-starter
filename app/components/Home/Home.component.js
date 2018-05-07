@@ -9,6 +9,7 @@ import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import IconOcticons from 'react-native-vector-icons/Octicons';
 import IconSimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import IconZocial from 'react-native-vector-icons/Zocial';
+import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styles from './Home.style';
@@ -74,25 +75,61 @@ class Home extends Component {
           <IconZocial name='pocket' size={30} color='#900' />
         </View>
         <Button title='Go to About page >' onPress={this.goToAboutPage}/>
+
+        <Text style={styles.welcome}>
+          Greeting: {this.props.message}
+        </Text>
+        <Button title='Good Morning' onPress={this.props.goodMorning} />
+        <Button title='Good Afternoon' onPress={this.props.goodAfternoon} />
+        <Button title='Good Night' onPress={this.props.goodNight} />
       </View>
     );
   }
 }
 
 Home.propTypes = {
-  navigation: PropTypes.object
+  navigation: PropTypes.object,
+  
+  message: PropTypes.string,
+  
+  goodMorning: PropTypes.func,
+  goodAfternoon: PropTypes.func,
+  goodNight: PropTypes.func
 };
 
 Home.defaultProps = {
-  navigation: null
+  navigation: null,
+  
+  message: '',
+
+  goodMorning: noop,
+  goodAfternoon: noop,
+  goodNight: noop
 };
 
 const mapStateToProps = (state) => ({
-  state
+  message: state.message
 });
-
+ 
 const mapDispatchToProps = (dispatch) => ({
-  dispatch
+  goodMorning: () => {
+    dispatch({
+      type: 'GOOD_MORNING_ACTION',
+      payload: 'Good Morning'
+    });
+  },
+  goodAfternoon: () => {
+    dispatch({
+      type: 'GOOD_AFTERNOON_ACTION',
+      payload: 'Good Afternoon'
+    });
+  },
+  goodNight: () => {
+    dispatch({
+      type: 'GOOD_NIGHT_ACTION',
+      payload: 'Good Night'
+    });
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

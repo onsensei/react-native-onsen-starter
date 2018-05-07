@@ -77,7 +77,7 @@ class Home extends Component {
         <Button title='Go to About page >' onPress={this.goToAboutPage}/>
 
         <Text style={styles.welcome}>
-          Greeting: {this.props.message}
+          Greeting: {this.props.greeting} at {this.props.time}
         </Text>
         <Button title='Good Morning' onPress={this.props.goodMorning} />
         <Button title='Good Afternoon' onPress={this.props.goodAfternoon} />
@@ -90,7 +90,8 @@ class Home extends Component {
 Home.propTypes = {
   navigation: PropTypes.object,
   
-  message: PropTypes.string,
+  greeting: PropTypes.string,
+  time: PropTypes.string,
   
   goodMorning: PropTypes.func,
   goodAfternoon: PropTypes.func,
@@ -100,7 +101,8 @@ Home.propTypes = {
 Home.defaultProps = {
   navigation: null,
   
-  message: '',
+  greeting: '',
+  time: '',
 
   goodMorning: noop,
   goodAfternoon: noop,
@@ -108,7 +110,8 @@ Home.defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
-  message: state.message
+  greeting: state.message.message,
+  time: state.message.time
 });
  
 const mapDispatchToProps = (dispatch) => ({

@@ -13,8 +13,10 @@ import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styles from './Home.style';
+import {bindActionCreators} from 'redux';
 import {Button, Platform, Text, View} from 'react-native';
 import {connect} from 'react-redux';
+import * as actions from '../../redux/actions/index.action';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -41,6 +43,18 @@ class Home extends Component {
   
   goToAboutPage = () => {
     this.props.navigation.navigate('About');
+  }
+
+  onPressGoodMorningButton = () => {
+    this.props.goodMorning('Good Morning');
+  }
+
+  onPressGoodAfternoonButton = () => {
+    this.props.goodAfternoon('Good Afternoon');
+  }
+
+  onPressGoodNightButton = () => {
+    this.props.goodNight('Good Night');
   }
 
   render () {
@@ -79,9 +93,9 @@ class Home extends Component {
         <Text style={styles.welcome}>
           Greeting: {this.props.greeting} at {this.props.time}
         </Text>
-        <Button title='Good Morning' onPress={this.props.goodMorning} />
-        <Button title='Good Afternoon' onPress={this.props.goodAfternoon} />
-        <Button title='Good Night' onPress={this.props.goodNight} />
+        <Button title='Good Morning' onPress={this.onPressGoodMorningButton} />
+        <Button title='Good Afternoon' onPress={this.onPressGoodAfternoonButton} />
+        <Button title='Good Night' onPress={this.onPressGoodNightButton} />
       </View>
     );
   }
@@ -115,24 +129,9 @@ const mapStateToProps = (state) => ({
 });
  
 const mapDispatchToProps = (dispatch) => ({
-  goodMorning: () => {
-    dispatch({
-      type: 'GOOD_MORNING_ACTION',
-      payload: 'Good Morning'
-    });
-  },
-  goodAfternoon: () => {
-    dispatch({
-      type: 'GOOD_AFTERNOON_ACTION',
-      payload: 'Good Afternoon'
-    });
-  },
-  goodNight: () => {
-    dispatch({
-      type: 'GOOD_NIGHT_ACTION',
-      payload: 'Good Night'
-    });
-  }
+  goodMorning: bindActionCreators(actions.greetingMorning, dispatch),
+  goodAfternoon: bindActionCreators(actions.greetingAfternoon, dispatch),
+  goodNight: bindActionCreators(actions.greetingNight, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

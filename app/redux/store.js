@@ -1,19 +1,15 @@
-import {applyMiddleware, compose, createStore} from 'redux';
-// import someReduxMiddleware from 'some-redux-middleware';
-// import someOtherReduxMiddleware from 'some-other-redux-middleware';
+import createSagaMiddleware from 'redux-saga';
 import rootReducer from './reducers/index.reducer';
+import rootSaga from './sagas/index.saga';
+import {applyMiddleware, compose, createStore} from 'redux';
+import {fork} from 'redux-saga/effects';
 import * as actions from './actions/index.action';
 
-// setup
-
-const enhancerList = [];
-const devToolsExtension = window && window.__REDUX_DEVTOOLS_EXTENSION__;
-
-if (typeof devToolsExtension === 'function') {
-  enhancerList.push(devToolsExtension());
-}
-
 // middleware
+
+const composeEnhancers = global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+
+const sagaMiddleware = createSagaMiddleware();
 
 const greetingMiddleware = () => (next) => (action) => {
   if (action.type === actions.GOOD_NIGHT_ACTION) {
@@ -23,8 +19,16 @@ const greetingMiddleware = () => (next) => (action) => {
   next(action);
 };
 
-const composedEnhancer = compose(applyMiddleware(greetingMiddleware), ...enhancerList);
+const composedEnhancer = composeEnhancers(applyMiddleware(sagaMiddleware, greetingMiddleware));
+
+function* sagas () {
+  yield fork(rootSaga);
+}
 
 // store
 
-export const initStore = () => createStore(rootReducer, {}, composedEnhancer);
+export const initStore = () => {
+  const store = createStore(rootReducer, {}, composedEnhancer);
+  sagaMiddleware.run(sagas);
+  return store;
+};

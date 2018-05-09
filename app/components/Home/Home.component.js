@@ -45,6 +45,10 @@ class Home extends Component {
     this.props.navigation.navigate('About');
   }
 
+  onPressGreetingButton = () => {
+    this.props.greetingAll();
+  }
+
   onPressGoodMorningButton = () => {
     this.props.goodMorning('Good Morning');
   }
@@ -93,6 +97,7 @@ class Home extends Component {
         <Text style={styles.welcome}>
           Greeting: {this.props.greeting} at {this.props.time}
         </Text>
+        <Button title='Greeting' onPress={this.onPressGreetingButton} />
         <Button title='Good Morning' onPress={this.onPressGoodMorningButton} />
         <Button title='Good Afternoon' onPress={this.onPressGoodAfternoonButton} />
         <Button title='Good Night' onPress={this.onPressGoodNightButton} />
@@ -107,6 +112,7 @@ Home.propTypes = {
   greeting: PropTypes.string,
   time: PropTypes.string,
   
+  greetingAll: PropTypes.func,
   goodMorning: PropTypes.func,
   goodAfternoon: PropTypes.func,
   goodNight: PropTypes.func
@@ -118,6 +124,7 @@ Home.defaultProps = {
   greeting: '',
   time: '',
 
+  greetingAll: noop,
   goodMorning: noop,
   goodAfternoon: noop,
   goodNight: noop
@@ -129,6 +136,7 @@ const mapStateToProps = (state) => ({
 });
  
 const mapDispatchToProps = (dispatch) => ({
+  greetingAll: bindActionCreators(actions.greetingAll, dispatch),
   goodMorning: bindActionCreators(actions.greetingMorning, dispatch),
   goodAfternoon: bindActionCreators(actions.greetingAfternoon, dispatch),
   goodNight: bindActionCreators(actions.greetingNight, dispatch)

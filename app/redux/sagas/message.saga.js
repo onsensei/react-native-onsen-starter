@@ -4,15 +4,15 @@ import * as actions from './../../redux/actions/index.action';
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 export function* goodMorningHandler () {
-  yield call(console.log, 'good morning');
+  // yield call(console.log, 'good morning');
 }
 
 export function* goodAfternoonHandler () {
-  yield call(console.log, 'good afternoon');
+  // yield call(console.log, 'good afternoon');
 }
 
 export function* goodNightHandler () {
-  yield call(console.log, 'good night');
+  // yield call(console.log, 'good night');
 }
 
 export function* greetingHandler () {

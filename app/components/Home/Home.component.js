@@ -30,14 +30,6 @@ class Home extends Component {
     this.increase();
   }
   
-  goToAboutPage = () => {
-    this.props.navigation.navigate('About');
-  }
-
-  onPressGreetingButton = () => {
-    this.props.greetingAllDispatcher();
-  }
-
   onPressGoodMorningButton = () => {
     const actionPayload = {
       message: 'Good Morning from dispatcher',
@@ -61,6 +53,14 @@ class Home extends Component {
     };
     this.props.goodNightDispatcher(actionPayload);
   }
+  
+  onPressGreetingAllButton = () => {
+    this.props.greetingAllDispatcher();
+  }
+
+  goToListPage = () => {
+    this.props.navigation.navigate('List');
+  }
 
   render () {
     return (
@@ -74,20 +74,28 @@ class Home extends Component {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        
         <Text style={styles.instructions}>
           count : {this.state.count}
         </Text>
-        <Button title='count' onPress={this.onPressCountButton}/>
-        <Button title='Go to About page >' onPress={this.goToAboutPage}/>
+        <Button title='count++' onPress={this.onPressCountButton}/>
 
-        <Text style={styles.welcome}>
+        <Text style={styles.instructions}>
           Greeting: {this.props.message} at {this.props.time}
         </Text>
-        
-        <Button title='Good Morning' onPress={this.onPressGoodMorningButton} />
-        <Button title='Good Afternoon' onPress={this.onPressGoodAfternoonButton} />
-        <Button title='Good Night' onPress={this.onPressGoodNightButton} />
-        <Button title='Greeting' onPress={this.onPressGreetingButton} />
+        <View style={styles.horizontalContainer}>
+          <Button title='Good Morning' onPress={this.onPressGoodMorningButton} />
+          <Button title='Good Afternoon' onPress={this.onPressGoodAfternoonButton} />
+        </View>
+        <View style={styles.horizontalContainer}>
+          <Button title='Good Night' onPress={this.onPressGoodNightButton} />
+          <Button title='Greeting All' onPress={this.onPressGreetingAllButton} />
+        </View>
+
+        <Text style={styles.instructions}>
+          Navigate
+        </Text>
+        <Button title='Go to List page >' onPress={this.goToListPage}/>
       </View>
     );
   }

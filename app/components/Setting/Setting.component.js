@@ -1,13 +1,8 @@
-import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styles from './Setting.style';
 import {Text, View} from 'react-native';
 
 export default class Setting extends Component {
-  goBack = () => {
-    this.props.navigation.goBack();
-  }
-
   render () {
     return (
       <View style={styles.container}>
@@ -18,11 +13,3 @@ export default class Setting extends Component {
     );
   }
 }
-
-Setting.propTypes = {
-  navigation: PropTypes.object
-};
-
-Setting.defaultProps = {
-  navigation: null
-};

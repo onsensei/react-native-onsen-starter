@@ -12,9 +12,9 @@ const composeEnhancers = global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? global.__
 const sagaMiddleware = createSagaMiddleware();
 
 const greetingMiddleware = () => (next) => (action) => {
-  if (action.type === actions.GOOD_NIGHT_ACTION) {
-    action.payload = 'Sweet Dream';
-  }
+  // if (action.type === actions.GOOD_NIGHT_ACTION) {
+  //   action.payload = 'Sweet Dream';
+  // }
 
   next(action);
 };

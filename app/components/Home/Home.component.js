@@ -46,19 +46,31 @@ class Home extends Component {
   }
 
   onPressGreetingButton = () => {
-    this.props.greetingAll();
+    this.props.greetingAllDispatcher();
   }
 
   onPressGoodMorningButton = () => {
-    this.props.goodMorning('Good Morning');
+    const actionPayload = {
+      message: 'Good Morning from dispatcher',
+      time: '8:00'
+    };
+    this.props.goodMorningDispatcher(actionPayload);
   }
 
   onPressGoodAfternoonButton = () => {
-    this.props.goodAfternoon('Good Afternoon');
+    const actionPayload = {
+      message: 'Good Afternoon from dispatcher',
+      time: '14:00'
+    };
+    this.props.goodAfternoonDispatcher(actionPayload);
   }
 
   onPressGoodNightButton = () => {
-    this.props.goodNight('Good Night');
+    const actionPayload = {
+      message: 'Good Night from dispatcher',
+      time: '20:00'
+    };
+    this.props.goodNightDispatcher(actionPayload);
   }
 
   render () {
@@ -95,12 +107,13 @@ class Home extends Component {
         <Button title='Go to About page >' onPress={this.goToAboutPage}/>
 
         <Text style={styles.welcome}>
-          Greeting: {this.props.greeting} at {this.props.time}
+          Greeting: {this.props.message} at {this.props.time}
         </Text>
-        <Button title='Greeting' onPress={this.onPressGreetingButton} />
+        
         <Button title='Good Morning' onPress={this.onPressGoodMorningButton} />
         <Button title='Good Afternoon' onPress={this.onPressGoodAfternoonButton} />
         <Button title='Good Night' onPress={this.onPressGoodNightButton} />
+        <Button title='Greeting' onPress={this.onPressGreetingButton} />
       </View>
     );
   }
@@ -109,37 +122,37 @@ class Home extends Component {
 Home.propTypes = {
   navigation: PropTypes.object,
   
-  greeting: PropTypes.string,
+  message: PropTypes.string,
   time: PropTypes.string,
   
-  greetingAll: PropTypes.func,
-  goodMorning: PropTypes.func,
-  goodAfternoon: PropTypes.func,
-  goodNight: PropTypes.func
+  greetingAllDispatcher: PropTypes.func,
+  goodMorningDispatcher: PropTypes.func,
+  goodAfternoonDispatcher: PropTypes.func,
+  goodNightDispatcher: PropTypes.func
 };
 
 Home.defaultProps = {
   navigation: null,
   
-  greeting: '',
+  message: '',
   time: '',
 
-  greetingAll: noop,
-  goodMorning: noop,
-  goodAfternoon: noop,
-  goodNight: noop
+  greetingAllDispatcher: noop,
+  goodgoodMorningDispatcherMorning: noop,
+  goodAfternoonDispatcher: noop,
+  goodNightDispatcher: noop
 };
 
 const mapStateToProps = (state) => ({
-  greeting: state.message.message,
-  time: state.message.time
+  message: state.greetingState.message,
+  time: state.greetingState.time
 });
  
 const mapDispatchToProps = (dispatch) => ({
-  greetingAll: bindActionCreators(actions.greetingAll, dispatch),
-  goodMorning: bindActionCreators(actions.greetingMorning, dispatch),
-  goodAfternoon: bindActionCreators(actions.greetingAfternoon, dispatch),
-  goodNight: bindActionCreators(actions.greetingNight, dispatch)
+  greetingAllDispatcher: bindActionCreators(actions.greetingAllActionCreator, dispatch),
+  goodMorningDispatcher: bindActionCreators(actions.goodMorningActionCreator, dispatch),
+  goodAfternoonDispatcher: bindActionCreators(actions.goodAfternoonActionCreator, dispatch),
+  goodNightDispatcher: bindActionCreators(actions.goodNightActionCreator, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

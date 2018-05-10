@@ -1,21 +1,26 @@
+import * as actions from '../actions/index.action';
+
 const message = (messageState = '', action) => {
   switch (action.type) {
-  case 'GOOD_MORNING_ACTION': {
+  case actions.GOOD_MORNING_ACTION: {
     return {
-      time: '9:00',
-      message: action.payload
+      lastGreetingType: action.type,
+      message: action.payload.message,
+      time: action.payload.time
     };
   }
-  case 'GOOD_AFTERNOON_ACTION': {
+  case actions.GOOD_AFTERNOON_ACTION: {
     return {
-      time: '13:00',
-      message: action.payload
+      lastGreetingType: action.type,
+      message: action.payload.message,
+      time: action.payload.time
     };
   }
-  case 'GOOD_NIGHT_ACTION': {
+  case actions.GOOD_NIGHT_ACTION: {
     return {
-      time: '20:00',
-      message: action.payload
+      lastGreetingType: action.type,
+      message: action.payload.message,
+      time: action.payload.time
     };
   }
   default: return messageState;

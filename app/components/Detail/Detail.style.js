@@ -9,5 +9,15 @@ export default {
     fontSize: 20,
     textAlign: 'center',
     margin: 10
+  },
+  title: {
+    fontSize: 18,
+    textAlign: 'center',
+    margin: 10
+  },
+  description: {
+    fontSize: 16,
+    textAlign: 'center',
+    margin: 10
   }
 };

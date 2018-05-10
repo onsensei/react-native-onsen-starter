@@ -1,32 +1,34 @@
+import About from '../components/About/About.component';
+import Detail from '../components/Detail/Detail.component';
 import Setting from '../components/Setting/Setting.component';
 import {StackNavigator, TabNavigator} from 'react-navigation';
 
-const SettingStackNavigator01 = StackNavigator({
-  Setting: {
-    screen: Setting,
+const DetailStackNavigator = StackNavigator({
+  Detail: {
+    screen: Detail,
     navigationOptions: {
-      headerTitle: 'Setting Title 01',
-      tabBarLabel: 'Setting Tab 01'
+      headerTitle: 'Detail Nav',
+      tabBarLabel: 'Detail Tab'
     }
   }
 });
 
-const SettingStackNavigator02 = StackNavigator({
-  Setting: {
-    screen: Setting,
+const AboutStackNavigator = StackNavigator({
+  About: {
+    screen: About,
     navigationOptions: {
-      headerTitle: 'Setting Title 02',
-      tabBarLabel: 'Setting Tab 02'
+      headerTitle: 'About Nav',
+      tabBarLabel: 'About Tab'
     }
   }
 });
 
-const SettingStackNavigator03 = StackNavigator({
+const SettingStackNavigator = StackNavigator({
   Setting: {
     screen: Setting,
     navigationOptions: {
-      headerTitle: 'Setting Title 03',
-      tabBarLabel: 'Setting Tab 03'
+      headerTitle: 'Setting Nav',
+      tabBarLabel: 'Setting Tab'
     }
   }
 });
@@ -34,14 +36,14 @@ const SettingStackNavigator03 = StackNavigator({
 // ----------
 
 const tabPages = {
-  Setting01: {
-    screen: SettingStackNavigator01
+  Detail: {
+    screen: DetailStackNavigator
   },
-  Setting02: {
-    screen: SettingStackNavigator02
+  About: {
+    screen: AboutStackNavigator
   },
-  Setting03: {
-    screen: SettingStackNavigator03
+  Setting: {
+    screen: SettingStackNavigator
   }
 };
 

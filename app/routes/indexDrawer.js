@@ -1,3 +1,5 @@
+import About from '../components/About/About.component';
+import Detail from '../components/Detail/Detail.component';
 import Icon from 'react-native-vector-icons/Foundation';
 import React from 'react';
 import Setting from '../components/Setting/Setting.component';
@@ -13,15 +15,15 @@ const getRootHomeNavOpt01 = ({navigation}) => {
   );
 
   return {
-    headerTitle: 'Setting Title A',
+    headerTitle: 'Detail Nav',
     headerLeft: MenuButton,
-    drawerLabel: 'Setting A'
+    drawerLabel: 'Detail Drawer'
   };
 };
 
-const SettingStackNavigator01 = StackNavigator({
-  Setting: {
-    screen: Setting,
+const DetailStackNavigator = StackNavigator({
+  Detail: {
+    screen: Detail,
     navigationOptions: getRootHomeNavOpt01
   }
 });
@@ -36,15 +38,15 @@ const getRootHomeNavOpt02 = ({navigation}) => {
   );
 
   return {
-    headerTitle: 'Setting Title B',
+    headerTitle: 'About Nav',
     headerLeft: MenuButton,
-    drawerLabel: 'Setting B'
+    drawerLabel: 'About Drawer'
   };
 };
 
-const SettingStackNavigator02 = StackNavigator({
-  Setting: {
-    screen: Setting,
+const AboutStackNavigator = StackNavigator({
+  About: {
+    screen: About,
     navigationOptions: getRootHomeNavOpt02
   }
 });
@@ -59,13 +61,13 @@ const getRootHomeNavOpt03 = ({navigation}) => {
   );
 
   return {
-    headerTitle: 'Setting Title C',
+    headerTitle: 'Setting Nav',
     headerLeft: MenuButton,
-    drawerLabel: 'Setting C'
+    drawerLabel: 'Setting Drawer'
   };
 };
 
-const SettingStackNavigator03 = StackNavigator({
+const SettingStackNavigator = StackNavigator({
   Setting: {
     screen: Setting,
     navigationOptions: getRootHomeNavOpt03
@@ -75,14 +77,14 @@ const SettingStackNavigator03 = StackNavigator({
 // ----------
 
 const HomeDrawerNavigator = DrawerNavigator({
-  Setting01: {
-    screen: SettingStackNavigator01
+  Detail: {
+    screen: DetailStackNavigator
   },
-  Setting02: {
-    screen: SettingStackNavigator02
+  About: {
+    screen: AboutStackNavigator
   },
-  Setting03: {
-    screen: SettingStackNavigator03
+  Setting: {
+    screen: SettingStackNavigator
   }
 });
 

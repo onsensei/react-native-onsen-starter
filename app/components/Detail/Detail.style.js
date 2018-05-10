@@ -16,7 +16,7 @@ export default {
     margin: 10
   },
   description: {
-    fontSize: 16,
+    fontSize: 14,
     textAlign: 'center',
     margin: 10
   }

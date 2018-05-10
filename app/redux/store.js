@@ -3,7 +3,7 @@ import rootReducer from './reducers/index.reducer';
 import rootSaga from './sagas/index.saga';
 import {applyMiddleware, compose, createStore} from 'redux';
 import {fork} from 'redux-saga/effects';
-import * as actions from './actions/index.action';
+// import * as actions from './actions/index.action';
 
 // middleware
 

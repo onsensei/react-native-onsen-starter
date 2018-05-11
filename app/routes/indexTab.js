@@ -1,6 +1,7 @@
 import About from '../components/About/About.component';
 import Detail from '../components/Detail/Detail.component';
 import Setting from '../components/Setting/Setting.component';
+import VectorIcon from '../components/VectorIcon/VectorIcon.component';
 import {StackNavigator, TabNavigator} from 'react-navigation';
 
 const DetailStackNavigator = StackNavigator({
@@ -33,6 +34,16 @@ const SettingStackNavigator = StackNavigator({
   }
 });
 
+const VectorIconStackNavigator = StackNavigator({
+  VectorIcon: {
+    screen: VectorIcon,
+    navigationOptions: {
+      headerTitle: 'VectorIcon Nav',
+      tabBarLabel: 'VectorIcon Tab'
+    }
+  }
+});
+
 // ----------
 
 const tabPages = {
@@ -44,6 +55,9 @@ const tabPages = {
   },
   Setting: {
     screen: SettingStackNavigator
+  },
+  VectorIcon: {
+    screen: VectorIconStackNavigator
   }
 };
 

@@ -58,7 +58,7 @@ class Home extends Component {
     this.props.greetingAllDispatcher();
   }
 
-  goToListPage = () => {
+  onPressGoToListPageButton = () => {
     this.props.navigation.navigate('List');
   }
 
@@ -95,7 +95,7 @@ class Home extends Component {
         <Text style={styles.instructions}>
           Navigate
         </Text>
-        <Button title='Go to List page >' onPress={this.goToListPage}/>
+        <Button title='Go to List page >' onPress={this.onPressGoToListPageButton}/>
       </View>
     );
   }

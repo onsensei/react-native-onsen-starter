@@ -1,6 +1,6 @@
-import About from '../components/About/About.component';
+import Detail from '../components/Detail/Detail.component';
 import Home from '../components/Home/Home.component';
-import Setting from '../components/Setting/Setting.component';
+import List from '../components/List/List.component';
 import {StackNavigator} from 'react-navigation';
 
 const HomeStackNavigator = StackNavigator({
@@ -10,16 +10,16 @@ const HomeStackNavigator = StackNavigator({
       headerTitle: 'Home'
     }
   },
-  About: {
-    screen: About,
+  List: {
+    screen: List,
     navigationOptions: {
-      headerTitle: 'About'
+      headerTitle: 'List'
     }
   },
-  Setting: {
-    screen: Setting,
+  Detail: {
+    screen: Detail,
     navigationOptions: {
-      headerTitle: 'Setting'
+      headerTitle: 'Detail'
     }
   }
 });

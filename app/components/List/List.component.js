@@ -1,15 +1,18 @@
+import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styles from './List.style';
 import {Button, Text, View} from 'react-native';
+import {connect} from 'react-redux';
+import {NavigationActions} from 'react-navigation';
 
-export default class List extends Component {
+class List extends Component {
   onPressProductDetailButton01 = () => {
     const params = {
       title: 'Car',
       description: 'Vehicle'
     };
-    this.props.navigation.navigate('Detail', params);
+    this.props.navigateToDetail(params);
   }
 
   onPressProductDetailButton02 = () => {
@@ -17,7 +20,7 @@ export default class List extends Component {
       title: 'MHW',
       description: 'Game'
     };
-    this.props.navigation.navigate('Detail', params);
+    this.props.navigateToDetail(params);
   }
 
   onPressProductDetailButton03 = () => {
@@ -25,11 +28,11 @@ export default class List extends Component {
       title: 'Ice Cream',
       description: 'Dessert'
     };
-    this.props.navigation.navigate('Detail', params);
+    this.props.navigateToDetail(params);
   }
 
   onPressGoBackButton = () => {
-    this.props.navigation.goBack();
+    this.props.navigateBack();
   }
 
   render () {
@@ -56,9 +59,20 @@ export default class List extends Component {
 }
 
 List.propTypes = {
-  navigation: PropTypes.object
+  navigateToDetail: PropTypes.func,
+  navigateBack: PropTypes.func
 };
 
 List.defaultProps = {
-  navigation: null
+  navigateToDetail: noop,
+  navigateBack: noop
 };
+
+const mapStateToProps = null;
+ 
+const mapDispatchToProps = (dispatch) => ({
+  navigateToDetail: (params) => dispatch(NavigationActions.navigate({routeName: 'Detail', params})),
+  navigateBack: () => dispatch(NavigationActions.back())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);

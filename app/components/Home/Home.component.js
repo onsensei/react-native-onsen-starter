@@ -5,6 +5,7 @@ import styles from './Home.style';
 import {bindActionCreators} from 'redux';
 import {Button, Platform, Text, View} from 'react-native';
 import {connect} from 'react-redux';
+import {NavigationActions} from 'react-navigation';
 import * as actions from '../../redux/actions/index.action';
 
 const instructions = Platform.select({
@@ -59,7 +60,7 @@ class Home extends Component {
   }
 
   onPressGoToListPageButton = () => {
-    this.props.navigation.navigate('List');
+    this.props.navigateToList();
   }
 
   render () {
@@ -102,7 +103,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  navigation: PropTypes.object,
+  navigateToList: PropTypes.func,
   
   message: PropTypes.string,
   time: PropTypes.string,
@@ -114,7 +115,7 @@ Home.propTypes = {
 };
 
 Home.defaultProps = {
-  navigation: null,
+  navigateToList: noop,
   
   message: '',
   time: '',
@@ -134,7 +135,9 @@ const mapDispatchToProps = (dispatch) => ({
   greetingAllDispatcher: bindActionCreators(actions.greetingAllActionCreator, dispatch),
   goodMorningDispatcher: bindActionCreators(actions.goodMorningActionCreator, dispatch),
   goodAfternoonDispatcher: bindActionCreators(actions.goodAfternoonActionCreator, dispatch),
-  goodNightDispatcher: bindActionCreators(actions.goodNightActionCreator, dispatch)
+  goodNightDispatcher: bindActionCreators(actions.goodNightActionCreator, dispatch),
+
+  navigateToList: () => dispatch(NavigationActions.navigate({routeName: 'List'}))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

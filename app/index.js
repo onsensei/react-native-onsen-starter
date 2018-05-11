@@ -7,14 +7,24 @@ import Router from './routes/index';
 // import RouterTab from './routes/indexTab';
 import {addNavigationHelpers} from 'react-navigation';
 import {connect, Provider} from 'react-redux';
+import {createReactNavigationReduxMiddleware, createReduxBoundAddListener} from 'react-navigation-redux-helpers';
 import {initStore} from './redux/store';
 
 // redux router
+// use navigation state in redux instead of state in react-navigation
+
+// Note: createReactNavigationReduxMiddleware must be run before createReduxBoundAddListener
+// const middleware = createReactNavigationReduxMiddleware(
+createReactNavigationReduxMiddleware(
+  'root',
+  (state) => state.nav,
+);
+const addListener = createReduxBoundAddListener('root');
 
 class ReduxRouter extends Component {
   render () {
     const {dispatch, nav} = this.props;
-    const navigation = addNavigationHelpers({dispatch, state: nav});
+    const navigation = addNavigationHelpers({dispatch, state: nav, addListener});
     return <Router navigation={navigation} />;
   }
 }

@@ -4,8 +4,28 @@ import styles from './List.style';
 import {Button, Text, View} from 'react-native';
 
 export default class List extends Component {
-  onPressProductDetailButton = () => {
-    this.props.navigation.navigate('Detail');
+  onPressProductDetailButton01 = () => {
+    const params = {
+      title: 'Car',
+      description: 'Vehicle'
+    };
+    this.props.navigation.navigate('Detail', params);
+  }
+
+  onPressProductDetailButton02 = () => {
+    const params = {
+      title: 'MHW',
+      description: 'Game'
+    };
+    this.props.navigation.navigate('Detail', params);
+  }
+
+  onPressProductDetailButton03 = () => {
+    const params = {
+      title: 'Ice Cream',
+      description: 'Dessert'
+    };
+    this.props.navigation.navigate('Detail', params);
   }
 
   onPressGoBackButton = () => {
@@ -22,9 +42,9 @@ export default class List extends Component {
         <Text style={styles.instructions}>
           Product List
         </Text>
-        <Button title='Product 01 >' onPress={this.onPressProductDetailButton}/>
-        <Button title='Product 02 >' onPress={this.onPressProductDetailButton}/>
-        <Button title='Product 03 >' onPress={this.onPressProductDetailButton}/>
+        <Button title='Product 01 >' onPress={this.onPressProductDetailButton01}/>
+        <Button title='Product 02 >' onPress={this.onPressProductDetailButton02}/>
+        <Button title='Product 03 >' onPress={this.onPressProductDetailButton03}/>
 
         <Text style={styles.instructions}>
           Navigate

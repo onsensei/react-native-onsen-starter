@@ -6,9 +6,13 @@ import renderer from 'react-test-renderer';
 
 describe('Detail', () => {
   let component;
-
+  
   beforeEach(() => {
-    component = <Detail/>;
+    const navigation = {
+      getParam: jest.fn()
+    };
+
+    component = <Detail navigation={navigation}/>;
   });
 
   it('renders correctly', () => {

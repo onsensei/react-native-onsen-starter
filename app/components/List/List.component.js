@@ -70,7 +70,7 @@ List.defaultProps = {
 
 const mapStateToProps = null;
  
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   navigateToDetail: (params) => dispatch(NavigationActions.navigate({routeName: 'Detail', params})),
   navigateBack: () => dispatch(NavigationActions.back())
 });

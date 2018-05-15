@@ -79,7 +79,7 @@ describe('message.reducer', () => {
 
   it('default', () => {
     // arrange
-    const prevState = {};
+    const prevState = undefined;
     const action = {
       type: ''
     };
@@ -88,6 +88,6 @@ describe('message.reducer', () => {
     const result = reducer(prevState, action);
     
     // assert
-    expect(result).toEqual(prevState);
+    expect(result).toEqual({});
   });
 });

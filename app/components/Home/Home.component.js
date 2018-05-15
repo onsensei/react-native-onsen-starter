@@ -1,10 +1,10 @@
-import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styles from './Home.style';
 import {bindActionCreators} from 'redux';
 import {Button, Platform, Text, View} from 'react-native';
 import {connect} from 'react-redux';
+import {get, noop} from 'lodash';
 import {NavigationActions} from 'react-navigation';
 import * as actions from '../../redux/actions/index.action';
 
@@ -20,15 +20,11 @@ class Home extends Component {
     count: 0
   }
 
-  increase = () => {
+  onPressCountButton = () => {
     const newCount = this.state.count + 1;
     this.setState({
       count: newCount
     });
-  }
-
-  onPressCountButton = () => {
-    this.increase();
   }
   
   onPressGoodMorningButton = () => {
@@ -127,8 +123,8 @@ Home.defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
-  message: state.greetingState.message,
-  time: state.greetingState.time
+  message: get(state, 'greetingState.message', ''),
+  time: get(state, 'greetingState.time', '')
 });
  
 const mapDispatchToProps = (dispatch) => ({

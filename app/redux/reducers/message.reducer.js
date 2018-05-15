@@ -1,6 +1,6 @@
 import * as actions from '../actions/index.action';
 
-const message = (messageState = '', action) => {
+const message = (messageState = {}, action) => {
   switch (action.type) {
   case actions.GOOD_MORNING_ACTION: {
     return {

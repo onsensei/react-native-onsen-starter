@@ -2,7 +2,7 @@ import {call, put, takeLatest} from 'redux-saga/effects';
 import * as actions from './../../redux/actions/index.action';
 
 export const defaultDelay = 1000;
-export const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+export const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export function* greetingAllHandler () {
   yield call(delay, defaultDelay);

@@ -67,3 +67,16 @@ describe('MessageSaga.greetingAllHandler', () => {
     expect(result).toBeUndefined();
   });
 });
+
+describe('MessageSaga', () => {
+  it('delay should call setTimeout', () => {
+    // arrange
+    const spy = jest.spyOn(global, 'setTimeout');
+
+    // act
+    return MessageSaga.delay(MessageSaga.defaultDelay).then(() => {
+      // assert
+      expect(spy).toHaveBeenCalled();
+    });
+  });
+});

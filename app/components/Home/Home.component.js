@@ -127,7 +127,7 @@ const mapStateToProps = (state) => ({
   time: get(state, 'greetingState.time', '')
 });
  
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   greetingAllDispatcher: bindActionCreators(actions.greetingAllActionCreator, dispatch),
   goodMorningDispatcher: bindActionCreators(actions.goodMorningActionCreator, dispatch),
   goodAfternoonDispatcher: bindActionCreators(actions.goodAfternoonActionCreator, dispatch),
